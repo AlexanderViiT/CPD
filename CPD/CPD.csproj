@@ -8,4 +8,14 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="ZSplashInicio\Splash.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="ZSplashInicio\Splash.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </SplashScreen>
+  </ItemGroup>
+
 </Project>
