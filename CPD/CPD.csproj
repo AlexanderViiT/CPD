@@ -18,4 +18,13 @@
     </SplashScreen>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ZLogin\AModel\" />
+    <Folder Include="ZLogin\AViewModel\" />
+    <Folder Include="ZViewModel\" />
+    <Folder Include="ZView\" />
+    <Folder Include="ZModel\" />
+    <Folder Include="ZImagenes\" />
+  </ItemGroup>
+
 </Project>

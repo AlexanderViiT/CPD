@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace CPD.ZLogin
+namespace CPD.ZLogin.AView
 {
     /// <summary>
     /// Lógica de interacción para Window1.xaml
@@ -22,6 +22,12 @@ namespace CPD.ZLogin
         public LoginP()
         {
             InitializeComponent();
+        }
+
+        private void Window_MoverPantalla(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
         }
     }
 }
