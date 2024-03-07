@@ -3,14 +3,43 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CPD.ZLogin"
+        xmlns:local="clr-namespace:CPD.ZLogin.AView"
         mc:Ignorable="d"
         Title="LoginP" Height="550" Width="800"
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
         MouseDown="Window_MoverPantalla">
-    <Grid>
-         
-    </Grid>
+    <Border CornerRadius="50">
+        <Border.Background>
+            <ImageBrush ImageSource="/ZLogin/AView/equipo_bg.jpg"
+                        Stretch="None"/>
+        </Border.Background>
+        
+        <Border CornerRadius="50"
+            BorderThickness="5"
+            Opacity="0.90">
+            
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#462AD8" Offset="0"/>
+                <GradientStop Color="#DA34AE" Offset="0.75"/>
+                <GradientStop Color="#8A16C1" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.75"/>
+                    <GradientStop Color="#8A16C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+
+    </Border>
+    
 </Window>

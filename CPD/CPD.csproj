@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ZLogin\AView\equipo_bg.jpg" />
     <None Remove="ZSplashInicio\Splash.png" />
   </ItemGroup>
 
@@ -25,6 +26,12 @@
     <Folder Include="ZView\" />
     <Folder Include="ZModel\" />
     <Folder Include="ZImagenes\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="ZLogin\AView\equipo_bg.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
