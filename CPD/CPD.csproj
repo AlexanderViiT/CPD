@@ -24,10 +24,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ZLogin\AModel\" />
     <Folder Include="ZViewModel\" />
-    <Folder Include="ZView\" />
     <Folder Include="ZModel\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0" />
   </ItemGroup>
 
   <ItemGroup>

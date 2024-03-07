@@ -4,8 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security;
+using System.Net;
 using System.Security.RightsManagement;
 using System.Windows.Input;
+using CPD.ZLogin.ARepositorios;
+using CPD.ZLogin.AModel;
+using System.Security.Principal;
 
 namespace CPD.ZLogin.AViewModel
 {
@@ -16,6 +20,7 @@ namespace CPD.ZLogin.AViewModel
         private SecureString _contrasena;
         private string _mensajeError;
         private bool _vistaActivada = true;
+        private IUserRepository userRepository;
 
         public string Nombre_usuario
         {
@@ -74,6 +79,7 @@ namespace CPD.ZLogin.AViewModel
 
         public LoginViewModel()
         {
+            userRepository = new RepositorioUsuario();
             LoginCommand = new ViewModelCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
             RecuperarContrasenaCommand = new ViewModelCommand(p => ExecuteRecoverPassCommand("", ""));
         }
@@ -91,7 +97,18 @@ namespace CPD.ZLogin.AViewModel
 
         private void ExecuteLoginCommand(object obj)
         {
-            throw new NotImplementedException();
+            var usuarioValido = userRepository.AutenticacionUsuario(new NetworkCredential(Nombre_usuario,Contrasena));
+            if (usuarioValido)
+            {
+                Thread.CurrentPrincipal = new GenericPrincipal(
+                    new GenericIdentity(Nombre_usuario), null);
+                VistaActivada = false;
+                MensajeError = "Credenciales correctas";
+            }
+            else
+            {
+                MensajeError = "Nombre de Usuario o Contraseña Incorrecta";
+            }
         }
         private void ExecuteRecoverPassCommand(string usuario, string correo)
         {
