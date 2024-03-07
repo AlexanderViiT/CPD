@@ -9,7 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ZImagenes\key-icon.png" />
+    <None Remove="ZImagenes\Logo.png" />
+    <None Remove="ZImagenes\user-icon.png" />
     <None Remove="ZLogin\AView\equipo_bg.jpg" />
+    <None Remove="ZLogin\AView\user-icon.png" />
     <None Remove="ZSplashInicio\Splash.png" />
   </ItemGroup>
 
@@ -21,17 +25,25 @@
 
   <ItemGroup>
     <Folder Include="ZLogin\AModel\" />
-    <Folder Include="ZLogin\AViewModel\" />
     <Folder Include="ZViewModel\" />
     <Folder Include="ZView\" />
     <Folder Include="ZModel\" />
-    <Folder Include="ZImagenes\" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="ZImagenes\key-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ZImagenes\Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ZImagenes\user-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="ZLogin\AView\equipo_bg.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="ZLogin\AView\user-icon.png" />
   </ItemGroup>
 
 </Project>
