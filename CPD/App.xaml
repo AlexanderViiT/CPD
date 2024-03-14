@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:CPD"
              Startup="InicioAplicacion">
     <Application.Resources>
-         
+
+        <ResourceDictionary Source="/Estilos/ColoresUI.xaml"/>
+
     </Application.Resources>
 </Application>

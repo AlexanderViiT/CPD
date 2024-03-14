@@ -24,7 +24,7 @@ namespace CPD.ZLogin.ARepositorios
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "SELECT * FROM usuario WHERE nombre_usuario=@Nombre_usuario and contrasena=@Contrasena";
+                command.CommandText = "SELECT * FROM dbo.usuario WHERE nombre_usuario=@Nombre_usuario and contrasena=@Contrasena";
                 command.Parameters.Add("@nombre_usuario", System.Data.SqlDbType.NVarChar).Value = credential.UserName;
                 command.Parameters.Add("@contrasena", System.Data.SqlDbType.NVarChar).Value = credential.Password;
                 validUser = command.ExecuteScalar() == null ? false : true;

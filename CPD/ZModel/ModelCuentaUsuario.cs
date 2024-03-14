@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPD.ZModel
 {
-    class ModelCuentaUsuario
+    public class ModelCuentaUsuario
     {
     }
 }
