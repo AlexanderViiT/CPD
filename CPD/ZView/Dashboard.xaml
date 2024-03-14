@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModel="clr-namespace:CPD.ZViewModel"
         xmlns:local="clr-namespace:CPD.ZView"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
@@ -56,6 +57,15 @@
                                     Margin="10,0,0,0"/>
                     </StackPanel>
 
+                    <RadioButton Style="{StaticResource botonMenu}"
+                                    Tag="#E285DE">
+
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Home" Style="{StaticResource iconoBotonMenu}"/>
+                            <TextBlock Text="Dashboard" Style="{StaticResource textoBotonMenu}"/>
+                        </StackPanel>
+
+                    </RadioButton>
 
                 </StackPanel>
   
