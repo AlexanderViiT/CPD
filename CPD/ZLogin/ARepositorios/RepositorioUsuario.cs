@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using CPD.ZLogin.AModel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Data;
 
 namespace CPD.ZLogin.ARepositorios
 {
@@ -54,7 +56,32 @@ namespace CPD.ZLogin.ARepositorios
 
         public UserModel getByUsername(string Nombre_usuario)
         {
-            throw new NotImplementedException();
+            UserModel user = null;
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "select * from usuario where nombre_usuario=@nombre_usuario";
+                command.Parameters.Add("@nombre_usuario", SqlDbType.NVarChar).Value = Nombre_usuario;
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        user = new UserModel()
+                        {
+                            Id = reader[0].ToString(),
+                            Nombre_usuario = reader[1].ToString(),
+                            Contrasena = string.Empty,
+                            Nombres = reader[3].ToString(),
+                            Apellido_paterno = reader[4].ToString(),
+                            Apellido_materno = reader[5].ToString(),
+                            Correo = reader[6].ToString()
+                        };
+                    }
+                }
+            }
+            return user;
         }
 
         public void Remove(int id)

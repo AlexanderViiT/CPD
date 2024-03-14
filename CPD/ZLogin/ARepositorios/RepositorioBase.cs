@@ -13,7 +13,8 @@ namespace CPD.ZLogin.ARepositorios
         private readonly string _connectionString;
         public RepositorioBase()
         {
-            _connectionString = "Server=192.168.100.85; User Id=conexion; Password=conexion; Database=CPD; TrustServerCertificate=True";
+            //_connectionString = "Server=192.168.100.109; User Id=conexion; Password=conexion; Database=CPD; TrustServerCertificate=True";
+            _connectionString = "Server=(local); Integrated Security=true; Database=CPD; TrustServerCertificate=True";
         }
         protected SqlConnection GetConnection()
         {
