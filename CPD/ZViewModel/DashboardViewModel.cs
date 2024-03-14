@@ -119,7 +119,7 @@ namespace CPD.ZViewModel
         private void ExecuteShowCustomerViewCommand(object obj)
         {
             CurrentChildView = new CustomerViewModel();
-            Caption = "Customer";
+            Caption = "Repositorio";
             Icon = IconChar.UserGroup;
         }
     }
